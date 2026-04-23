@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --accent: #0052FF;
+    --accent-secondary: #4D7CFF;
+    --background: #FAFAFA;
+    --foreground: #0F172A;
+    --muted: #F1F5F9;
+    --muted-foreground: #64748B;
+    --border: #E2E8F0;
+    --card: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply font-sans bg-background text-foreground antialiased;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
+
+@layer components {
+  /* ── Gradient utilities ── */
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  }
+  .gradient-text {
+    background: linear-gradient(to right, var(--accent), var(--accent-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-border {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    padding: 2px;
+    border-radius: 14px;
+  }
+
+  /* ── Section label badge ── */
+  .section-badge {
+    @apply inline-flex items-center gap-2.5 rounded-full border border-accent/30 bg-accent/5 px-5 py-2 font-mono text-xs uppercase tracking-[0.15em] text-accent;
+  }
+  .badge-dot {
+    @apply h-2 w-2 rounded-full bg-accent animate-pulse-dot;
+  }
+
+  /* ── Typography ── */
+  .section-title {
+    @apply font-display text-4xl lg:text-[3.25rem] leading-[1.1] tracking-tight text-foreground;
+  }
+  .hero-title {
+    @apply font-display text-[2.75rem] sm:text-6xl lg:text-[5.25rem] leading-[1.05] tracking-[-0.02em] text-foreground;
+  }
+  .section-desc {
+    @apply text-base lg:text-lg text-muted-foreground leading-[1.75] font-normal max-w-xl;
+  }
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.15em] text-accent mb-3 block;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 gradient-bg text-white px-8 py-3.5 rounded-xl text-sm font-semibold tracking-wide
+    shadow-sm transition-all duration-200
+    hover:-translate-y-0.5 hover:shadow-accent hover:brightness-110
+    active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 bg-transparent text-foreground px-8 py-3.5 rounded-xl text-sm font-semibold
+    border border-border transition-all duration-200
+    hover:border-accent/40 hover:bg-muted hover:-translate-y-0.5
+    active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 text-accent text-sm font-semibold transition-all duration-200 hover:gap-3;
+  }
+
+  /* ── Cards ── */
+  .card-base {
+    @apply bg-card border border-border rounded-2xl shadow-md transition-all duration-300
+    hover:shadow-xl hover:-translate-y-1;
+  }
+  .card-featured {
+    @apply rounded-[14px] bg-card;
+  }
+
+  /* ── Inputs ── */
+  .form-input {
+    @apply w-full h-12 px-4 border border-border rounded-xl text-sm text-foreground bg-card outline-none
+    transition-all duration-200
+    focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:border-accent
+    placeholder:text-muted-foreground/60 font-sans;
+  }
+  .form-label {
+    @apply block text-xs font-semibold tracking-wide uppercase text-foreground mb-2;
+  }
+
+  /* ── Admin (unchanged) ── */
+  .admin-sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 rounded-lg transition-all duration-200 hover:text-white hover:bg-white/5;
+  }
+  .admin-sidebar-link.active {
+    @apply text-white bg-accent;
+  }
+}
+
+@layer utilities {
+  .dot-pattern {
+    background-image: radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.03;
+  }
+  .text-gradient {
+    background: linear-gradient(to right, #0052FF, #4D7CFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
