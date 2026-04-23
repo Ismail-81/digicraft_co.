@@ -1,7 +1,7 @@
-import { Monitor, TrendingUp, Search, Share2, ShoppingCart, BarChart2, Globe, Zap, Target, Layers, ArrowRight } from 'lucide-react'
+import { Monitor, TrendingUp, Search, Share2, ShoppingCart, BarChart2, Globe, Zap, Target, Layers, type LucideIcon } from 'lucide-react'
 import { useServices } from '@/hooks/useServices'
 
-const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string; strokeWidth?: number }>> = {
+const ICON_MAP: Record<string, LucideIcon> = {
   Monitor, TrendingUp, Search, Share2, ShoppingCart, BarChart2, Globe, Zap, Target, Layers,
 }
 

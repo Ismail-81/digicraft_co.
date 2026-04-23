@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, ExternalLink } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import { usePortfolio } from '@/hooks/usePortfolio'
 
 const FALLBACK_ITEMS = [

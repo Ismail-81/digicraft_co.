@@ -1,8 +1,8 @@
-import { Zap, BarChart2, Users, Shield, Monitor, TrendingUp, Search, Share2, ShoppingCart, Target, Layers, Globe } from 'lucide-react'
+import { Zap, BarChart2, Users, Shield, Monitor, TrendingUp, Search, Share2, ShoppingCart, Target, Layers, Globe, type LucideIcon } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 import { supabase } from '@/lib/supabase'
 
-const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string; strokeWidth?: number }>> = {
+const ICON_MAP: Record<string, LucideIcon> = {
   Zap, BarChart2, Users, Shield, Monitor, TrendingUp, Search, Share2, ShoppingCart, Target, Layers, Globe,
 }
 

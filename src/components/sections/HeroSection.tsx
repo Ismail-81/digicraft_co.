@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, Users, Zap } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users } from 'lucide-react'
 
 function AnimatedHeroGraphic() {
   return (

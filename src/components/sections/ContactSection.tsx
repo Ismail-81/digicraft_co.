@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Mail, MapPin, Linkedin, Twitter, Instagram, Github, ArrowRight, Send } from 'lucide-react'
+import { Mail, MapPin, Linkedin, Twitter, Instagram, Github, Send } from 'lucide-react'
 import { useSubmitContact } from '@/hooks/useContactSubmissions'
 import type { ContactFormData } from '@/types'
 
